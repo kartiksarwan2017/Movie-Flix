@@ -16,6 +16,10 @@ class Moviecard extends React.Component {
 
     }
 
+    addStars(){
+        console.log("this: ", this);
+    }
+
     render(){
 
         // object destructuring
@@ -49,7 +53,9 @@ class Moviecard extends React.Component {
                                   alt="star" 
                                 />
 
-                                   <img className="str-btn" alt="increase" src="https://cdn-icons-png.flaticon.com/128/3524/3524388.png" />
+                                   <img className="str-btn" alt="increase" src="https://cdn-icons-png.flaticon.com/128/3524/3524388.png" 
+                                   onClick={this.addStars}
+                                   />
 
                                    <span>0</span>
                             </div>
