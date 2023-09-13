@@ -18,6 +18,9 @@ class Moviecard extends React.Component {
 
     render(){
 
+        // object destructuring
+        const {title, plot, price, rating} = this.state;
+
         
         return (
             <>
@@ -29,13 +32,13 @@ class Moviecard extends React.Component {
                     </div>
 
                     <div className="right">
-                        <div className="title">{this.state.title}</div>
-                        <div className="plot">{this.state.plot}</div>
-                        <div className="price">Rs. {this.state.price}</div>
+                        <div className="title">{title}</div>
+                        <div className="plot">{plot}</div>
+                        <div className="price">Rs. {price}</div>
 
 
                         <div className="footer">
-                            <div className="rating">{this.state.rating}</div>
+                            <div className="rating">{rating}</div>
                             <div className="star-dis">
 
                                 <img className="str-btn" alt="decrease" src="https://cdn-icons-png.flaticon.com/128/56/56889.png" />
