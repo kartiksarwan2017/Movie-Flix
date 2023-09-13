@@ -55,7 +55,7 @@ class Moviecard extends React.Component {
                                 />
 
                                    <img className="str-btn" alt="increase" src="https://cdn-icons-png.flaticon.com/128/3524/3524388.png" 
-                                   onClick={this.addStars}
+                                   onClick={this.addStars.bind(this)}
                                    />
 
                                    <span>0</span>
