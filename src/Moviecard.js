@@ -1,7 +1,24 @@
 import React from "react";
 
 class Moviecard extends React.Component {
+
+    constructor() {
+
+        // this method will call the constructor of the parent class i.e Component
+        super();
+
+        this.state = {
+            title: "The Avengers",
+            plot: "Supernatural powers shown in the movie.",
+            price: 199,
+            rating: 8.9
+        }
+
+    }
+
     render(){
+
+        
         return (
             <>
              <div className="main">
@@ -12,15 +29,13 @@ class Moviecard extends React.Component {
                     </div>
 
                     <div className="right">
-                        <div className="title">
-                            The Avengers
-                        </div>
-                        <div className="plot">Supernatural powers shown in the movie.</div>
-                        <div className="price">Rs. 199</div>
+                        <div className="title">{this.state.title}</div>
+                        <div className="plot">{this.state.plot}</div>
+                        <div className="price">Rs. {this.state.price}</div>
 
 
                         <div className="footer">
-                            <div className="rating">8.9</div>
+                            <div className="rating">{this.state.rating}</div>
                             <div className="star-dis">
 
                                 <img className="str-btn" alt="decrease" src="https://cdn-icons-png.flaticon.com/128/56/56889.png" />
