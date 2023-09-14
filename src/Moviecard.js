@@ -11,21 +11,37 @@ class Moviecard extends React.Component {
             title: "The Avengers",
             plot: "Supernatural powers shown in the movie.",
             price: 199,
-            rating: 8.9
+            rating: 8.9,
+            stars: 0
         }
 
         this.addStars = this.addStars.bind(this);
     }
 
     addStars(){
-        console.log("this: ", this);
-        console.log("this.state: ", this.state);
+        // this.state.stars += 0.5;
+        // console.log("this: ", this);
+        // console.log("this.state: ", this.state);
+        // console.log("this.state.stars: ", this.state.stars);
+
+        // first form of updating the state using setState() in this case we can directly pass the object inside setState()
+        // this.setState({
+        //     stars: this.state.stars + 0.5
+        // })
+
+        // second form of updating the state using setState()
+        this.setState((prevState) => {
+            return {
+                stars: prevState.stars + 0.5
+            }
+        })
+
     }
 
     render(){
 
         // object destructuring
-        const {title, plot, price, rating} = this.state;
+        const {title, plot, price, rating, stars} = this.state;
 
         
         return (
@@ -59,7 +75,7 @@ class Moviecard extends React.Component {
                                    onClick={this.addStars}
                                    />
 
-                                   <span>0</span>
+                                   <span>{stars}</span>
                             </div>
                             <button className="favourite-btn">Favourite</button>
                             <button className="cart-btn">Add to cart</button>
