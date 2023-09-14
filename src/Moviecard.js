@@ -16,6 +16,7 @@ class Moviecard extends React.Component {
         }
 
         this.addStars = this.addStars.bind(this);
+        this.removeStars = this.removeStars.bind(this);
     }
 
     addStars(){
@@ -36,6 +37,22 @@ class Moviecard extends React.Component {
             }
         })
 
+    }
+
+
+    removeStars() {
+
+        // form 1
+        // this.setState({
+        //     stars: this.state.stars - 0.5
+        // })
+
+        // form 2
+        this.setState((prevState) => {
+            return {
+                stars: prevState.stars - 0.5
+            }
+        })  
     }
 
     render(){
@@ -63,7 +80,12 @@ class Moviecard extends React.Component {
                             <div className="rating">{rating}</div>
                             <div className="star-dis">
 
-                                <img className="str-btn" alt="decrease" src="https://cdn-icons-png.flaticon.com/128/56/56889.png" />
+                                <img 
+                                  className="str-btn" 
+                                  alt="decrease" 
+                                  src="https://cdn-icons-png.flaticon.com/128/56/56889.png" 
+                                  onClick={this.removeStars}
+                                />
                                 
                                 <img 
                                   src="https://cdn-icons-png.flaticon.com/128/1828/1828884.png" 
@@ -71,8 +93,11 @@ class Moviecard extends React.Component {
                                   alt="star" 
                                 />
 
-                                   <img className="str-btn" alt="increase" src="https://cdn-icons-png.flaticon.com/128/3524/3524388.png" 
-                                   onClick={this.addStars}
+                                   <img 
+                                    className="str-btn" 
+                                    alt="increase" 
+                                    src="https://cdn-icons-png.flaticon.com/128/3524/3524388.png" 
+                                    onClick={this.addStars}
                                    />
 
                                    <span>{stars}</span>
