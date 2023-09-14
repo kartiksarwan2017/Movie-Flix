@@ -31,11 +31,18 @@ class Moviecard extends React.Component {
         // })
 
         // second form of updating the state using setState()
+
+        if(this.state.stars >= 5){
+            return;
+        }
+
         this.setState((prevState) => {
             return {
                 stars: prevState.stars + 0.5
             }
         })
+
+        console.log("stars: ", this.state.stars);
 
     }
 
@@ -48,11 +55,16 @@ class Moviecard extends React.Component {
         // })
 
         // form 2
+        if(this.state.stars <= 0){
+            return;
+        }
+
         this.setState((prevState) => {
             return {
                 stars: prevState.stars - 0.5
             }
         })  
+        
     }
 
     render(){
