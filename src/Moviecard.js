@@ -40,7 +40,7 @@ class Moviecard extends React.Component {
             return {
                 stars: prevState.stars + 0.5
             }
-        })
+        }, () => console.log("stars inside callback: ", this.state.stars));
 
         console.log("stars: ", this.state.stars);
 
