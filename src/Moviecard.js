@@ -50,13 +50,13 @@ class Moviecard extends React.Component {
             stars: this.state.stars + 0.5
         });
         this.setState({
-            stars: this.state.stars + 0.5
+            stars: this.state.stars + 2
         });
         this.setState({
-            stars: this.state.stars + 0.5
+            stars: this.state.stars + 3
         });
         this.setState({
-            stars: this.state.stars + 0.5
+            stars: this.state.stars + 2
         });
 
         console.log("stars: ", this.state.stars);
