@@ -86,6 +86,7 @@ class Moviecard extends React.Component {
 
     render(){
 
+        console.log("rendered the component");
         // object destructuring
         const {title, plot, price, rating, stars} = this.state;
 
