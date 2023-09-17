@@ -12,7 +12,8 @@ class Moviecard extends React.Component {
             plot: "Supernatural powers shown in the movie.",
             price: 199,
             rating: 8.9,
-            stars: 0
+            stars: 0,
+            fav: false
         }
 
         this.addStars = this.addStars.bind(this);
@@ -84,6 +85,12 @@ class Moviecard extends React.Component {
         
     }
 
+    handleFav = () => {
+        this.setState({
+            fav: !this.state.fav
+        });
+    }
+
     render(){
 
         console.log("rendered the component");
@@ -132,7 +139,12 @@ class Moviecard extends React.Component {
 
                                    <span>{stars}</span>
                             </div>
-                            <button className="favourite-btn">Favourite</button>
+
+
+                            {this.state.fav ? <button className="unfavourite-btn" onClick={this.handleFav}>Un-Favourite</button> :    
+                            <button className="favourite-btn"
+                            onClick={this.handleFav}>Favourite</button>}
+                        
                             <button className="cart-btn">Add to cart</button>
                         </div>
                     </div>
