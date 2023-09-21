@@ -102,7 +102,7 @@ class Moviecard extends React.Component {
 
         console.log("rendered the component");
         // object destructuring
-        const {title, plot, price, rating, stars} = this.state;
+        const {title, plot, price, rating, stars, fav, cart} = this.state;
 
         
         return (
@@ -153,14 +153,14 @@ class Moviecard extends React.Component {
                             onClick={this.handleFav}>Favourite</button>} */}
 
 
-                            <button className= {this.state.fav? "unfavourite-btn" : "favourite-btn"} onClick={this.handleFav}>{this.state.fav? "Unfavourite" : "Favourite"}</button>
+                            <button className= {fav? "unfavourite-btn" : "favourite-btn"} onClick={this.handleFav}>{fav? "Unfavourite" : "Favourite"}</button>
 
                             {/* {this.state.cart? 
                             <button className="remove-cart-btn" onClick={this.handleCart}>Remove From Cart</button>:
                             <button className="cart-btn" onClick={this.handleCart}>Add to Cart</button> 
                             } */}
 
-                            <button className={this.state.cart? "remove-cart-btn" : "cart-btn"} onClick={this.handleCart}>{this.state.cart? "Remove From Cart" : "Add To Cart"}</button>
+                            <button className={cart? "remove-cart-btn" : "cart-btn"} onClick={this.handleCart}>{cart? "Remove From Cart" : "Add To Cart"}</button>
                         
 
                             
