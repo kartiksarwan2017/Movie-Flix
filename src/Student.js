@@ -2,11 +2,12 @@ import React from "react";
 
 class Student extends React.Component {
     render(){
-        console.log(this.props)
+        console.log(this.props);
+        const {stuname, marks} = this.props;
         return(
             <>
-             <h1>Hello, {this.props.stuname}</h1>
-             <p>You have secured {this.props.marks} %</p>
+             <h1>Hello, {stuname}</h1>
+             <p>You have secured {marks} %</p>
              <hr />
             </>
         )
