@@ -18,10 +18,13 @@
 function Student(props){
 
     const {stuname, marks} = props;
+    
+    /* Props cannot be modified. States can be modified */
+    props.stuname = "Krishna!"
 
     return (
         <>
-        <h1>Hello, {stuname}</h1>
+        <h1>Hello, {props.stuname}</h1>
         <p>You have secured {marks}</p>
         <hr />
         </>
