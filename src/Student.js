@@ -20,7 +20,7 @@ function Student(props){
     const {stuname, marks} = props;
     
     /* Props cannot be modified. States can be modified */
-    props.stuname = "Krishna!"
+    // props.stuname = "Krishna!"
 
     return (
         <>
