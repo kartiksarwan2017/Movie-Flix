@@ -2,24 +2,7 @@ import React from "react";
 
 class Moviecard extends React.Component {
 
-    constructor() {
-
-        // this method will call the constructor of the parent class i.e Component
-        super();
-
-        this.state = {
-            title: "The Avengers",
-            plot: "Supernatural powers shown in the movie.",
-            price: 199,
-            rating: 8.9,
-            stars: 0,
-            fav: false,
-            cart: false
-        }
-
-        this.addStars = this.addStars.bind(this);
-        this.removeStars = this.removeStars.bind(this);
-    }
+ 
 
     addStars(){
         // this.state.stars += 0.5;
@@ -102,7 +85,7 @@ class Moviecard extends React.Component {
 
         console.log("rendered the component");
         // object destructuring
-        const {title, plot, price, rating, stars, fav, cart} = this.state;
+        const {title, plot, price, rating, stars, fav, cart} = this.props;
 
         
         return (
