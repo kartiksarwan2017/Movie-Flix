@@ -26,13 +26,7 @@ class MovieList extends React.Component {
         return (
             <>
              <MovieCard 
-                title = {title} 
-                plot = {plot}
-                price = {price}
-                rating = {rating}
-                stars = {stars}
-                fav = {fav}
-                cart = {cart}
+               movies = {this.state}
              />
             </>
         )
