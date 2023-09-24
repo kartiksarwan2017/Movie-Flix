@@ -94,7 +94,20 @@ class MovieList extends React.Component {
       this.setState({
         movies: movies
       });
-      
+
+    }
+
+    handleCart = (movie) => {
+
+      const {movies} = this.state;
+      const movId = movies.indexOf(movie);
+
+      movies[movId].isInCart = !movies[movId].isInCart;
+
+      this.setState({
+        movies: movies
+      });
+
     }
 
 
@@ -112,6 +125,7 @@ class MovieList extends React.Component {
                    addStars = {this.handleIncStar} 
                    removeStars = {this.handleDecStar}
                    addToFavourites = {this.handleFavourite}
+                   addToCart = {this.handleCart}
                 />
              )}
             </>

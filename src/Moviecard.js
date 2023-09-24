@@ -3,16 +3,16 @@ import React from "react";
 class Moviecard extends React.Component {
     render(){
 
-        console.log("rendered the component");
+        // console.log("rendered the component");
         // object destructuring
 
-        console.log(this.props);
+        // console.log(this.props);
 
         // const {movies: data} = this.props;
         // console.log(data);
 
 
-        const {movies, addStars, removeStars, addToFavourites} = this.props;
+        const {movies, addStars, removeStars, addToFavourites, addToCart} = this.props;
 
         const {title, plot, price, rating, star, fav, isInCart} = this.props.movies;
         
@@ -71,7 +71,7 @@ class Moviecard extends React.Component {
                             <button className="cart-btn" onClick={this.handleCart}>Add to Cart</button> 
                             } */}
 
-                            <button className={isInCart? "remove-cart-btn" : "cart-btn"} onClick={this.handleCart}>{isInCart? "Remove From Cart" : "Add To Cart"}</button> 
+                            <button className={isInCart? "remove-cart-btn" : "cart-btn"} onClick={() => addToCart(movies)}>{isInCart? "Remove From Cart" : "Add To Cart"}</button> 
                         </div>
                     </div>
                 </div>
