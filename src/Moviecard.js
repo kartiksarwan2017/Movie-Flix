@@ -5,10 +5,14 @@ class Moviecard extends React.Component {
 
         console.log("rendered the component");
         // object destructuring
+
         console.log(this.props);
 
         // const {movies: data} = this.props;
         // console.log(data);
+
+
+        const {movies, addStars} = this.props;
 
         const {title, plot, price, rating, star, fav, isInCart} = this.props.movies;
         
@@ -48,7 +52,7 @@ class Moviecard extends React.Component {
                                     className="str-btn" 
                                     alt="increase" 
                                     src="https://cdn-icons-png.flaticon.com/128/3524/3524388.png" 
-                                    onClick={() => {this.props.addStars(this.props.movies)}}
+                                    onClick={() => {addStars(movies)}}
                                    />
 
                                    <span>{star}</span>
@@ -67,10 +71,7 @@ class Moviecard extends React.Component {
                             <button className="cart-btn" onClick={this.handleCart}>Add to Cart</button> 
                             } */}
 
-                            <button className={isInCart? "remove-cart-btn" : "cart-btn"} onClick={this.handleCart}>{isInCart? "Remove From Cart" : "Add To Cart"}</button>
-                        
-
-                            
+                            <button className={isInCart? "remove-cart-btn" : "cart-btn"} onClick={this.handleCart}>{isInCart? "Remove From Cart" : "Add To Cart"}</button> 
                         </div>
                     </div>
                 </div>
