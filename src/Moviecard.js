@@ -10,8 +10,7 @@ class Moviecard extends React.Component {
         // const {movies: data} = this.props;
         // console.log(data);
 
-        const {title, plot, price, rating, stars, fav, isInCart} = this.props.movies;
-
+        const {title, plot, price, rating, star, fav, isInCart} = this.props.movies;
         
         return (
             <>
@@ -49,10 +48,10 @@ class Moviecard extends React.Component {
                                     className="str-btn" 
                                     alt="increase" 
                                     src="https://cdn-icons-png.flaticon.com/128/3524/3524388.png" 
-                                    onClick={this.addStars}
+                                    onClick={() => {this.props.addStars(this.props.movies)}}
                                    />
 
-                                   <span>{stars}</span>
+                                   <span>{star}</span>
                             </div>
 
                             {/* 
