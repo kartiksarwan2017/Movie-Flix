@@ -84,6 +84,20 @@ class MovieList extends React.Component {
     }
 
 
+    handleFavourite = (movie) => {
+      
+      const {movies} = this.state;
+      const movId = movies.indexOf(movie);
+
+      movies[movId].fav = !movies[movId].fav;
+
+      this.setState({
+        movies: movies
+      });
+      
+    }
+
+
     render(){
 
         // const {title, plot, price, rating, stars, fav, isInCart, poster} = this.state.movies;
@@ -97,6 +111,7 @@ class MovieList extends React.Component {
                    movies = {movie} 
                    addStars = {this.handleIncStar} 
                    removeStars = {this.handleDecStar}
+                   addToFavourites = {this.handleFavourite}
                 />
              )}
             </>
