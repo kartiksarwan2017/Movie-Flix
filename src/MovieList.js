@@ -65,6 +65,24 @@ class MovieList extends React.Component {
 
     }
 
+    handleDecStar = (movie) => {
+
+      const {movies} = this.state;
+
+      const movId = movies.indexOf(movie);
+
+      if(movies[movId].star <= 0){
+        return;
+      }
+
+      movies[movId].star -= 0.5;
+
+      this.setState({
+        movies
+      });
+
+    }
+
 
     render(){
 
@@ -78,6 +96,7 @@ class MovieList extends React.Component {
                    key={index} 
                    movies = {movie} 
                    addStars = {this.handleIncStar} 
+                   removeStars = {this.handleDecStar}
                 />
              )}
             </>

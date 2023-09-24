@@ -12,7 +12,7 @@ class Moviecard extends React.Component {
         // console.log(data);
 
 
-        const {movies, addStars} = this.props;
+        const {movies, addStars, removeStars} = this.props;
 
         const {title, plot, price, rating, star, fav, isInCart} = this.props.movies;
         
@@ -39,7 +39,7 @@ class Moviecard extends React.Component {
                                   className="str-btn" 
                                   alt="decrease" 
                                   src="https://cdn-icons-png.flaticon.com/128/56/56889.png" 
-                                  onClick={this.removeStars}
+                                  onClick={() => {removeStars(movies)}}
                                 />
                                 
                                 <img 
