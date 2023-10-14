@@ -1,37 +1,36 @@
 import React from "react";
 import styled from "styled-components";
-import navbarStyle from "./Navbar.module.css";
 
-// const Nav = styled.div`
-//     width: 100%;
-//     height: 70px;
-//     background: linear-gradient(170deg, #1bc059, #0d47a1);
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     position: relative;
-// `;
+const Nav = styled.div`
+    width: 100%;
+    height: 70px;
+    background: linear-gradient(170deg, #1bc059, #0d47a1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+`;
 
-// const Title = styled.div`
-//     font-size: 30px;
-//     color: #fff;
-//     font-weight: 600;
-//     font-family: Montserrat, sans-serif;
-//     text-transform: uppercase;
-//     margin-left: 20;
-//     &:hover{color: #0f0}
-// `;
+const Title = styled.div`
+    font-size: 30px;
+    color: #fff;
+    font-weight: 600;
+    font-family: Montserrat, sans-serif;
+    text-transform: uppercase;
+    margin-left: 20;
+    &:hover{color: #0f0}
+`;
 
-// const CartContainer = styled.div`
-//     position: "relative";
-//     cursor: "pointer";
-// `;
+const CartContainer = styled.div`
+    position: "relative";
+    cursor: "pointer";
+`;
 
 
-// const CartIcon = styled.img`
-//     height: 48px;
-//     margin-right: 20px;
-// `;
+const CartIcon = styled.img`
+    height: 48px;
+    margin-right: 20px;
+`;
 
 const CartCount = styled.span`
     background: ${(props) => props.color};
@@ -48,13 +47,13 @@ class Navbar extends React.Component{
     render(){
         return (
             <>
-            <div className={navbarStyle.nav}>
-                <div className={navbarStyle.title}>Movie-App</div>
-                <div className={navbarStyle.cartcontainer}> 
-                    <img src="https://cdn-icons-png.flaticon.com/128/4290/4290854.png" className={navbarStyle.carticon} alt="Cart Icon" />
+            <Nav>
+                <Title>Movie-App</Title>
+                <CartContainer> 
+                    <CartIcon src="https://cdn-icons-png.flaticon.com/128/4290/4290854.png" alt="Cart Icon" />
                     <CartCount color = "yellow" show={true}>0</CartCount>
-                </div>
-            </div>
+                </CartContainer>
+            </Nav>
             </>
         ) 
     }
