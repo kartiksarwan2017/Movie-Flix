@@ -12,7 +12,7 @@ class Moviecard extends React.Component {
         // console.log(data);
 
 
-        const {movies, addStars, removeStars, addToFavourites, addToCart} = this.props;
+        const {movies, addStars, decStars, toggleFavourite, toggleCart} = this.props;
 
         const {title, plot, price, rating, star, fav, isInCart} = this.props.movies;
         
@@ -39,7 +39,7 @@ class Moviecard extends React.Component {
                                   className="str-btn" 
                                   alt="decrease" 
                                   src="https://cdn-icons-png.flaticon.com/128/56/56889.png" 
-                                  onClick={() => {removeStars(movies)}}
+                                  onClick={() => {decStars(movies)}}
                                 />
                                 
                                 <img 
@@ -64,14 +64,14 @@ class Moviecard extends React.Component {
                             onClick={this.handleFav}>Favourite</button>} */}
 
 
-                            <button className= {fav? "unfavourite-btn" : "favourite-btn"} onClick={() => addToFavourites(movies)}>{fav? "Unfavourite" : "Favourite"}</button>
+                            <button className= {fav? "unfavourite-btn" : "favourite-btn"} onClick={() => toggleFavourite(movies)}>{fav? "Unfavourite" : "Favourite"}</button>
 
                             {/* {this.state.cart? 
                             <button className="remove-cart-btn" onClick={this.handleCart}>Remove From Cart</button>:
                             <button className="cart-btn" onClick={this.handleCart}>Add to Cart</button> 
                             } */}
 
-                            <button className={isInCart? "remove-cart-btn" : "cart-btn"} onClick={() => addToCart(movies)}>{isInCart? "Remove From Cart" : "Add To Cart"}</button> 
+                            <button className={isInCart? "remove-cart-btn" : "cart-btn"} onClick={() => toggleCart(movies)}>{isInCart? "Remove From Cart" : "Add To Cart"}</button> 
                         </div>
                     </div>
                 </div>
