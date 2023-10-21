@@ -89,19 +89,20 @@ handleFavourite = (movie) => {
 
 handleCart = (movie) => {
 
-  const {movies} = this.state;
+  let {movies, cartCount} = this.state;
   const movId = movies.indexOf(movie);
 
   movies[movId].isInCart = !movies[movId].isInCart;
 
   if(movies[movId].isInCart){
-    this.state.cartCount += 1;
+    cartCount += 1;
   }else{
-    this.state.cartCount -= 1;
+    cartCount -= 1;
   }
 
   this.setState({
-    movies: movies
+    movies: movies,
+    cartCount
   });
 
 }
@@ -109,13 +110,13 @@ handleCart = (movie) => {
   
   render() {
 
-  const {movies} = this.state;
+  const {movies, cartCount} = this.state;
 
    return (
     <>
 
       {/* <NavbarModule /> */}
-       <Navbar cartCount = {this.state.cartCount} />
+       <Navbar cartCount = {cartCount} />
        <MovieList movies= {movies} 
                   addStars = {this.handleIncStar} 
                   decStars = {this.handleDecStar}
