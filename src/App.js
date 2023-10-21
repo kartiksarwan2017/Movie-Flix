@@ -94,6 +94,14 @@ handleCart = (movie) => {
 
   movies[movId].isInCart = !movies[movId].isInCart;
 
+  if(movies[movId].isInCart){
+    this.state.cartCount += 1;
+  }else{
+    this.state.cartCount -= 1;
+  }
+
+  console.log(this.state.cartCount);
+
   this.setState({
     movies: movies
   });
@@ -109,7 +117,7 @@ handleCart = (movie) => {
     <>
 
       {/* <NavbarModule /> */}
-       <Navbar />
+       <Navbar cartCount = {this.state.cartCount} />
        <MovieList movies= {movies} 
                   addStars = {this.handleIncStar} 
                   decStars = {this.handleDecStar}
