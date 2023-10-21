@@ -100,8 +100,6 @@ handleCart = (movie) => {
     this.state.cartCount -= 1;
   }
 
-  console.log(this.state.cartCount);
-
   this.setState({
     movies: movies
   });
@@ -111,7 +109,7 @@ handleCart = (movie) => {
   
   render() {
 
-    const {movies} = this.state;
+  const {movies} = this.state;
 
    return (
     <>
