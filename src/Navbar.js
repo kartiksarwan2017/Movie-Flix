@@ -2,65 +2,67 @@ import React from "react";
 import styled from "styled-components";
 
 const Nav = styled.div`
-    width: 100%;
-    height: 70px;
-    background: linear-gradient(170deg, #1bc059, #0d47a1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
+  width: 100%;
+  height: 70px;
+  background: linear-gradient(170deg, #1bc059, #0d47a1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 `;
 
 const Title = styled.div`
-    font-size: 30px;
-    color: #fff;
-    font-weight: 600;
-    font-family: Montserrat, sans-serif;
-    text-transform: uppercase;
-    margin-left: 20;
-    &:hover{color: #0f0}
+  font-size: 30px;
+  color: #fff;
+  font-weight: 600;
+  font-family: Montserrat, sans-serif;
+  text-transform: uppercase;
+  margin-left: 20;
+  &:hover {
+    color: #0f0;
+  }
 `;
 
 const CartContainer = styled.div`
-    position: "relative";
-    cursor: "pointer";
+  position: "relative";
+  cursor: "pointer";
 `;
 
-
 const CartIcon = styled.img`
-    height: 48px;
-    margin-right: 20px;
+  height: 48px;
+  margin-right: 20px;
 `;
 
 const CartCount = styled.span`
-    background: ${(props) => props.color};
-    border-radius: 50%;
-    padding: 4px 8px;
-    position: absolute;
-    right: 10px;
-    top: -5px;
-    font-size: 12px;
-    visibility: ${(props) => props.show? "visible": "hidden"}
+  background: ${(props) => props.color};
+  border-radius: 50%;
+  padding: 4px 8px;
+  position: absolute;
+  right: 10px;
+  top: -5px;
+  font-size: 12px;
+  visibility: ${(props) => (props.show ? "visible" : "hidden")};
 `;
 
-class Navbar extends React.Component{
+function Navbar(props) {
+  const { cartCount } = props;
 
-    render(){   
-
-    const {cartCount} = this.props;
-
-        return (
-            <>
-            <Nav>
-                <Title>Movie-App</Title>
-                <CartContainer> 
-                    <CartIcon src="https://cdn-icons-png.flaticon.com/128/4290/4290854.png" alt="Cart Icon" />
-                    <CartCount color = "yellow" show={true}>{cartCount}</CartCount>
-                </CartContainer>
-            </Nav>
-            </>
-        ) 
-    }
+  return (
+    <>
+      <Nav>
+        <Title>Movie-App</Title>
+        <CartContainer>
+          <CartIcon
+            src="https://cdn-icons-png.flaticon.com/128/4290/4290854.png"
+            alt="Cart Icon"
+          />
+          <CartCount color="yellow" show={true}>
+            {cartCount}
+          </CartCount>
+        </CartContainer>
+      </Nav>
+    </>
+  );
 }
 
 export default Navbar;
